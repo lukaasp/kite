@@ -32,9 +32,10 @@ type Etcd struct {
 	log    kite.Logger
 }
 
+// etcd refers to etcd container
 func NewEtcd(machines []string, log kite.Logger) *Etcd {
 	if machines == nil || len(machines) == 0 {
-		machines = []string{"http://127.0.0.1:2379"}
+		machines = []string{"http://etcd:2379"}
 	}
 
 	cfg := etcd.Config{
